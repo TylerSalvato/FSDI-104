@@ -19,7 +19,7 @@ let petSalon = {
 }
 
 //constructor
-function Pet(name,age,gender,breed,service, type){
+function Pet(name,age,gender,breed,service,type){
     this.name=name;
     this.age=age;
     this.gender=gender;
@@ -46,31 +46,74 @@ let inputBreed = document.getElementById("txtBreed");
 let inputService = document.getElementById("txtService");
 let inputType = document.getElementById("txtType");
 
+function isValid(thePet){
+    let validation = true;
+    inputName.classList.remove("error");
+    inputAge.classList.remove("error");
+    inputGender.classList.remove("error");
+    inputBreed.classList.remove("error");
+    inputService.classList.remove("error");
+    inputType.classList.remove("error");
+
+    if(thePet.name==""){
+    if(thePet.age=="");
+    if(thePet.gender=="");
+    if(thePet.breed=="");
+    if(thePet.service=="");
+    if(thePet.type=="");
+        
+        //the pet is not valid
+        validation=false;
+        inputName.classList.add("error");
+        inputAge.classList.add("error");
+        inputGender.classList.add("error");
+        inputBreed.classList.add("error");
+        inputService.classList.add("error");
+        inputType.classList.add("error");
+    }
+    return validation;
+}
+
 function register(){
         //get the values
     //create the new pet
     let newPet = new Pet(inputName.value, inputAge.value, inputGender.value, inputBreed.value, inputService.value, inputType.value)
-    console.log(newPet);
+    if(isValid(newPet)==true){
+    
 
     //push the new pet
     petSalon.pets.push(newPet);
-    console.log(petSalon.pets);
+    
+    displayTable();
+    displayPetCards();
+    reset();
+    
+    }
 }
+
+//clear form
+function reset(){
+    inputName.value="";
+    inputAge.value="";
+    inputGender.value="";
+    inputBreed.value="";
+    inputService.value="";
+    inputType.value="";
+    }
+
 function init(){
     //create the pet objects
     let scooby = new Pet("Scooby", 84, "Male", "Dane", "Nail Trimming", "Cat");
     let scrappy = new Pet("Scrappy", 21, "Male", "Collie", "Nail Trimming", "Cat");
     let speedy = new Pet("Speedy", 49, "Female", "Hound", "Nail Trimming", "Cat");
-    console.log(scooby,scrappy,speedy);
-    petSalon.pets.push(scooby,scrappy,speedy);
-    console.log(petSalon.pets);
+    
+    petSalon.pets.push(scooby,scrappy,speedy); //push the pets into the array
+    displayPetCards();
+    
+    displayTable();
 
 }
 
 //waiting to render the html
 window.onload = init; 
 
-//clear form
-function reset(){
-document.getElementById("myForm");
-}

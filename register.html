@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
     ">
+    <link rel="stylesheet" href="./styles/mystyle.css">
 
 
     <title>Document</title>
@@ -55,16 +56,63 @@
                     <option value="lizard">Lizard</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+            <button type="button" class="btn btn-primary" onclick="register(); displayTable(); displayPetCards()">Register</button>
             <button type="button" class="btn btn-primary" id="myForm" onclick="reset()">Reset</button>
         </div>
 
-        <h2>Pets List</h2>
-        <ul id="pets"></ul>
+        <h2>Pets List :<sup id="numberPets"> 3</sup></h2>
+        <div id="pets">
+
+            <!-- here we will display the cards -->
+        </div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Breed</th>
+                <th scope="col">Service</th>
+                <th scope="col">Type</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">Scooby</th>
+                <td>84</td>
+                <td>Male</td>
+                <td>Dane</td>
+                <td>Nail Trimming</td>
+                <td>Cat</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Scrappy</th>
+                <td>21</td>
+                <td>Male</td>
+                <td>Collie</td>
+                <td>Nail Trimming</td>
+                <td>Cat</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Speedy</th>
+                <td>21</td>
+                <td>Male</td>
+                <td>Collie</td>
+                <td>Nail Trimming</td>
+                <td>Cat</td>
+            </tr>
+            </tbody>
+        </table>
+
+
     </main>
 
     <ul id="pets"></ul>
     <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
     <!-- <script src="./scripts/practice2.js"></script> -->
 </body>
 </html>
