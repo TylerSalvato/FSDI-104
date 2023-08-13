@@ -3,18 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
+    ">
+    <link rel="stylesheet" href="./styles/mystyle.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="header-container">
+        <div class="header-flex container">
+            <div class="header-bar">
+                <a href="index.html"><h1>The Pet Salon</h1></a>
+
+                <div class="mobile-menu">
+                    <a href="#navigation">
+                        <img class="bars" src="img/bars.svg" alt="hamburger menu">
+                    </a>
+                </div>
+                <nav id="navigation" class="menu">
             <h1>Pet Salon</h1>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
             <a href="register.html">Register</a>
             <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
         </nav>
     </header>
-    <script src="./scripts/practice2.js"></script>
+    <main>
+        <main>
+            <!-- create a table-->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pet Type:</th>
+                        <th>Pet Service:</th>
+                        <th>Time Needed Before:</th>
+                        <th>Time Needed After:</th>
+                        <th>Price:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Any</td>
+                        <td>Grooming</td>
+                        <td>Same Day</td>
+                        <td>Same Day</td>
+                        <td>$99</td>
+                    </tr>
+                    <tr>
+                        <td>Trained</td>
+                        <td>Medical Check</td>
+                        <td>24 Hourse</td>
+                        <td>24 Hours</td>
+                        <td>$199</td>
+                    </tr>
+                    <tr>
+                        <td>Aggressive</td>
+                        <td>Vaccines</td>
+                        <td>1 Week</td>
+                        <td>1 Week</td>
+                        <td>$299</td>
+                    </tr>
+                    <tr>
+                        <td>New Born</td>
+                        <td>Overnight Boarding</td>
+                        <td>1 Month</td>
+                        <td>1 Month</td>
+                        <td>$399</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+    </main>
+    <footer class="footer-container">
+        <div class="container">
+            
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non cum porro tempore explicabo et aliquam quaerat, odio fugit alias distinctio molestiae nihil atque omnis ratione similique at asperiores dicta! Deserunt.</p>
+            <a class="btn-details" href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+    <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
 </body>
 </html>

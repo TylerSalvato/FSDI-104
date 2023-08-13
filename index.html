@@ -3,20 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css
+    ">
+    <link rel="stylesheet" href="./styles/mystyle.css">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="header-container">
+        <div class="header-flex container">
+            <div class="header-bar">
+                <a href="index.html"><h1>The Pet Salon</h1></a>
+
+                <div class="mobile-menu">
+                    <a href="#navigation">
+                        <img class="bars" src="img/bars.svg" alt="hamburger menu">
+                    </a>
+                </div>
+                <nav id="navigation" class="menu">
             <h1>Pet Salon</h1>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
             <a href="register.html">Register</a>
             <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
         </nav>
     </header>
+    <main>
+        <div class="header-text">
+            <p>We sell luxury houses, condominiums and penthouses.</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <h2>Who we are</h2>
+    <div class="about-us-container container">
+        <div class="about-item">
+            <img src="ps.imgs/ps.imgs.1.jpg" alt="img icon 1 svg">
+            <h3>Full Service Spa</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptate quia nesciunt natus provident. Tempora quae consectetur velit suscipit tempore, facilis accusamus reprehenderit deleniti eum molestias sed, neque libero! Ut?</p>
+        </div>
+        <div class="about-item">
+            <img src="ps.imgs/pa.imgs.2.jpg" alt="img icon 2 svg">
+            <h3>Pet Hotel</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptate quia nesciunt natus provident. Tempora quae consectetur velit suscipit tempore, facilis accusamus reprehenderit deleniti eum molestias sed, neque libero! Ut?</p>
+        </div>
+        <div class="about-item">
+            <img src="ps.imgs/ps.imgs.3.jpg" alt="img icon 3 svg">
+            <h3>Veterinary Hospital</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptate quia nesciunt natus provident. Tempora quae consectetur velit suscipit tempore, facilis accusamus reprehenderit deleniti eum molestias sed, neque libero! Ut?</p>
+        </div>
+    </div>
+
     
+    <footer class="footer-container">
+        <div class="container">
+            <p class="title">We take care of your furry family</p>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non cum porro tempore explicabo et aliquam quaerat, odio fugit alias distinctio molestiae nihil atque omnis ratione similique at asperiores dicta! Deserunt.</p>
+            <a class="btn-details" href="contact.html">Contact Us</a>
+        </div>
+    </footer>
+
     <ul id="pets"></ul>
     <script src="./scripts/register.js"></script>
+    <script src="./scripts/display.js"></script>
 </body>
 </html>

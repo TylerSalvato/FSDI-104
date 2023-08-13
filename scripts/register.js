@@ -18,6 +18,7 @@ let petSalon = {
 
 }
 
+let counter=0;
 //constructor
 function Pet(name,age,gender,breed,service,type){
     this.name=name;
@@ -26,6 +27,7 @@ function Pet(name,age,gender,breed,service,type){
     this.breed=breed;
     this.service=service;
     this.type=type;
+    this.id=counter++;
 
 
 }
@@ -84,8 +86,9 @@ function register(){
     //push the new pet
     petSalon.pets.push(newPet);
     
+    
+    
     displayTable();
-    displayPetCards();
     reset();
     
     }
@@ -101,6 +104,33 @@ function reset(){
     inputType.value="";
     }
 
+    function deletePet(petID){
+        document.getElementById(petID).remove();
+
+        for(let i=0;i<petSalon.pets.length;i++){
+            let pet = petSalon.pets[i];
+            if(pet.id==petID){
+                petSalon.pets.splice(i,1);
+
+                displayNumberOfPets();
+            }
+        }
+    }
+
+function search(){
+    
+    let searchString = document.getElementById("txtSearch").value;
+    console.log("searching... " + searchString);
+    for(let i=0;i<petSalon.pets.length;i++){
+        let pet = petSalon.pets[i];
+        if(pet.name.toLowerCase() == searchString.toLowerCase()){
+            
+            document.getElementById(pet.id).classList.add("highlight");
+            
+        }
+    }
+}
+
 function init(){
     //create the pet objects
     let scooby = new Pet("Scooby", 84, "Male", "Dane", "Nail Trimming", "Cat");
@@ -108,9 +138,9 @@ function init(){
     let speedy = new Pet("Speedy", 49, "Female", "Hound", "Nail Trimming", "Cat");
     
     petSalon.pets.push(scooby,scrappy,speedy); //push the pets into the array
-    displayPetCards();
     
     displayTable();
+    displayNumberOfPets();
 
 }
 

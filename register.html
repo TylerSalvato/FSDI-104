@@ -11,14 +11,23 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1>The Fashion Pet</h1>
-        <nav>
+    <header class="header-container">
+        <div class="header-flex container">
+            <div class="header-bar">
+                <a href="index.html"><h1>The Pet Salon</h1></a>
+
+                <div class="mobile-menu">
+                    <a href="#navigation">
+                        <img class="bars" src="img/bars.svg" alt="hamburger menu">
+                    </a>
+                </div>
+                <nav id="navigation" class="menu">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="services.html">Contact</a>
+            <a href="contact.html">Contact</a>
             <a href="register.html">Register</a>
             <a href="services.html">Services</a>
+            <a href="blog.html">Blog</a>
         </nav>
     </header>
     <main class="container">
@@ -56,17 +65,22 @@
                     <option value="lizard">Lizard</option>
                 </select>
             </div>
-            <button type="button" class="btn btn-primary" onclick="register(); displayTable(); displayPetCards()">Register</button>
+            <button type="button" class="btn btn-primary" onclick="register()">Register</button>
             <button type="button" class="btn btn-primary" id="myForm" onclick="reset()">Reset</button>
         </div>
 
-        <h2>Pets List :<sup id="numberPets"> 3</sup></h2>
-        <div id="pets">
+        <h2>Pets List :<sup id="numberPets"></sup></h2>
+        <div id="pets" deletePet(petID)>
 
             <!-- here we will display the cards -->
         </div>
 
-        <table class="table">
+        <div>
+            <input type="search" id="txtSearch">
+            <button onclick="search();">Search</button>
+        </div>
+
+        <table class="table table-bordered">
             <thead>
             <tr>
                 <th scope="col">Name</th>
@@ -75,40 +89,23 @@
                 <th scope="col">Breed</th>
                 <th scope="col">Service</th>
                 <th scope="col">Type</th>
+                <th >Actions</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">Scooby</th>
-                <td>84</td>
-                <td>Male</td>
-                <td>Dane</td>
-                <td>Nail Trimming</td>
-                <td>Cat</td>
+            <tbody id="petsList">
 
-            </tr>
-            <tr>
-                <th scope="row">Scrappy</th>
-                <td>21</td>
-                <td>Male</td>
-                <td>Collie</td>
-                <td>Nail Trimming</td>
-                <td>Cat</td>
-
-            </tr>
-            <tr>
-                <th scope="row">Speedy</th>
-                <td>21</td>
-                <td>Male</td>
-                <td>Collie</td>
-                <td>Nail Trimming</td>
-                <td>Cat</td>
-            </tr>
             </tbody>
         </table>
 
 
     </main>
+    <footer class="footer-container">
+        <div class="container">
+            <p class="title">We take care of your furry family</p>
+            <p class="description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non cum porro tempore explicabo et aliquam quaerat, odio fugit alias distinctio molestiae nihil atque omnis ratione similique at asperiores dicta! Deserunt.</p>
+            <a class="btn-details" href="contact.html">Contact Us</a>
+        </div>
+    </footer>
 
     <ul id="pets"></ul>
     <script src="./scripts/register.js"></script>
